@@ -1,0 +1,9 @@
+# backend/nixpacks.toml
+
+[phases.setup]
+# Installs the ZBar library required by the pyzbar Python package
+aptPkgs = ["libzbar0"]
+
+[start]
+# Starts the uvicorn server for the backend application
+cmd = "uvicorn main:app --host 0.0.0.0 --port $PORT"
